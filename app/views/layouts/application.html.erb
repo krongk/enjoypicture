@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Enjoypicture</title> 
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <%= csrf_meta_tag %>
+<script language = "javascript">
+	$(document).ready(function(){
+		//
+		$("#name").focus(function(){
+			if ($(this).attr('value') == "Describe your feelings on this picture"){
+				$(this).attr('value', '');
+			}});
+	});
+</script>
+</head>
+<body>
+<%=render :partial => 'layouts/header' %>
+
+<div id ="article" class="page_margins">
+  <%= yield %>
+</div>
+
+<%=render :partial => 'layouts/footer' %>
+</body>
+</html>

@@ -1,0 +1,30 @@
+ <a href ="/">
+	<%=image_tag @page.picture.shortcut_path || @page.picture.global_path, :width => @page.picture.width.to_s + 'px' %>
+ </a>
+
+<div id="summary">
+	<a href="#"> </a> &nbsp;&nbsp;
+	<%=@page.title %>&nbsp;&nbsp;
+	 <a href="#"> </a> &nbsp;&nbsp;
+	<br/>
+</div>
+
+<br />
+<form method="post" action="/add_tag" class="yform" role="application" onSubmit="return check();">
+	<div style="margin:0;padding:0;display:inline"><input name="id" type="hidden" value="<%=@page.id%>" />
+		<%= tag(:input, :type => "hidden", :name =>request_forgery_protection_token.to_s, :value =>form_authenticity_token)  %>
+	</div> 
+	<div class="type-text" role="alert" aria-live="assertive">
+		<input type="input" name="name" id="name" size="40" value = "Describe your feelings on this picture"/>
+  <span class="type-button" >
+		<input type="submit" value="add"  class="submit" id="submit" name="submit" />
+	</span>
+</form>
+
+<div id="tag_list">
+<h3>View other people's description of this picture:</h3>
+  <%@page.tag_list.each do |tag| -%>
+		<%=link_to tag, {:action => 'tag', :id => tag}, :class => 'css3' %>
+  <%end -%>
+</div>
+

@@ -1,0 +1,82 @@
+@charset "utf-8";
+ /*------------------------------------------------------------------------------------------------------*/
+  * { margin:0; padding:0; }
+  html * { font-size:100.01%; }
+  body { overflow-y: scroll; }
+  body { text-align: center; }
+  textarea, pre, code, kbd, samp, var, tt {
+    font-family:Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
+  }
+  body {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:75.00%;
+    color:#999;
+  }
+  /*--- Headings | Überschriften ------------------------------------------------------------------------*/
+
+  h1,h2,h3,h4,h5,h6 {
+    font-family:"Times New Roman", Times, serif;
+    font-weight:normal;
+    color:#222;
+    margin:0 0 0.25em 0;
+  }
+
+  h1 { font-size:250%; }                       /* 30px */
+  h2 { font-size:200%; }                       /* 24px */
+  h3 { font-size:110%; }                       /* 18px */
+  h3 { color:#999;}
+  /* --- Lists | Listen  -------------------------------------------------------------------------------- */
+
+  ul, ol, dl { line-height:1.5em; margin:0 0 1em 1em; }
+  ul { list-style-type:disc; }
+  ul ul { list-style-type:circle; margin-bottom:0; }
+
+  ol { list-style-type:decimal; }
+  ol ol { list-style-type:lower-latin; margin-bottom:0; }
+
+  li { margin-left:0.8em; line-height:1.5em; }
+
+  dt { font-weight:bold; }
+  dd { margin:0 0 1em 0.8em; }
+
+/*--- Links ----------------------------------------------------------------------------------------- */
+
+  a { color:#4D87C7; background:transparent; text-decoration:none; }
+  a:visited  { color:#036; }
+
+  /* (en) maximum constrast for tab focus - change with great care */
+  /* (en) Maximaler Kontrast für Tab Focus - Ändern Sie diese Regel mit Bedacht */
+  a:focus { text-decoration:underline; color:#000; background: #fff; outline: 3px #f93 solid; }
+  a:hover,
+  a:active { color:#182E7A; text-decoration:underline; outline: 0 none; }
+
+  /*------------------------------------------------------------------------------------------------------*/ 
+  body { 
+    font: normal 16px/20px "Helvetica Neue", Helvetica, sans-serif;
+    background: rgb(237, 237, 236);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .page_margins {
+    margin: 0 auto;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border-top: 0px solid #fff;
+    padding: 10px 10px 26px 10px;
+  }
+  #header{width: 600px; text-align: left;}
+  #footer{width: 600px; text-align: left;}
+  #article{width: auto; margin-top: 20px;}
+  #nav{list-style:none; margin:-50px 2px 2px 2px; padding:2px;}
+  #nav li{float:right; margin-top:0px;}
+  .yform{width: 600px;}
+  #tag_cloud{width: 600px;}
+  #tag_list{width: 600px;}
+/*--for tag cloud--------*/
+  #tag_cloud a, #tag_list a{ padding: 4px; line-height: 1.5em;}
+  .css1 { font-size: 0.8em; padding: 10px 4px; color: #039}
+  .css2 { font-size: 1.2em; padding: 12px 6px; color: #03F}
+  .css3 { font-size: 1.8em; padding: 20px 8px; color: #3s33}
+  .css4 { font-size: 2.6em; padding: 25px 14px; color: #399}
