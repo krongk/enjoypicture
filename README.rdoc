@@ -1,0 +1,33 @@
+= EnjoyPicture
+
+EnjoyPicture is a web site that provider picture daily show. 
+Pictures are from network, and add picture automatically at background.
+It is versatile, amazing experience.
+See http://www.enjoypicture.net for fun.
+
+== Features
+* Picture views
+* Tag pictures
+* Picture auto update at background
+* Waiting for more...
+
+== Requirements
+* nokogiri
+* mechanize
+* acts-as-taggable-on
+* resque
+
+== Install EnjoyPicture
+ git clone git://github.com/krongk/enjoypicture.git
+
+== Deploy on Heroku
+ git init
+ git add .
+ git commit -m 'add first'
+ git remote add origin git://github.com/krongk/enjoypicture.git
+ git push origin master
+ heroku create
+ git push heroku master
+ heroku rake db:migrate
+ heroku rake db:seed
+ heroku open
