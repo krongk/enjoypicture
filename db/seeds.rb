@@ -6,4 +6,5 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 	pages = Page.create([{ :title => 'Tiebet'}, {	:title => 'Sunflower'}])
-	Picture.create([{:page_id => pages.first.id, :shortcut_path => 'tiebet.jpg', :width => 600}, {:page_id => pages.last.id, :shortcut_path => 'sunflower.jpg', :width => 600}])
+	Picture.create([{:page_id => pages.first.id, :shortcut_path => 'tiebet.jpg', :width => 600}, 
+		{:page_id => pages.last.id, :shortcut_path => 'sunflower.jpg', :width => 600}])

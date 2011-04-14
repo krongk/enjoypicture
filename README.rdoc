@@ -31,3 +31,7 @@ See http://www.enjoypicture.net for fun.
  heroku rake db:migrate
  heroku rake db:seed
  heroku open
+
+ == To Do List
+ * write backgroud job to fetch picture
+ * page cache
