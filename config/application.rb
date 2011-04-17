@@ -38,5 +38,9 @@ module Enjoypicture
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+		# caching is disabled by default for development and test, and enabled for production.
+		config.action_controller.perform_caching = true
+
   end
 end

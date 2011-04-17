@@ -73,10 +73,20 @@
   #nav li{float:right; margin-top:0px;}
   .yform{width: 600px;}
   #tag_cloud{width: 600px;}
-  #tag_list{width: 600px;}
+
 /*--for tag cloud--------*/
   #tag_cloud a, #tag_list a{ padding: 4px; line-height: 1.5em;}
   .css1 { font-size: 0.8em; padding: 10px 4px; color: #039}
   .css2 { font-size: 1.2em; padding: 12px 6px; color: #03F}
   .css3 { font-size: 1.8em; padding: 20px 8px; color: #3s33}
   .css4 { font-size: 2.6em; padding: 25px 14px; color: #399}
+  .color0{ color: #cccccc;}
+  .color1{ color: #66CC33;}
+  .color2{ color: #CCFF00;}
+  .color3{ color: #99FF99;}
+  .color4{ color: #3399CC;}
+  .color5{ color: #0066FF;}
+  .color6{ color: #FF6600;}
+  .color7{ color: #FFCC66;}
+  .color8{ color: #CCCCFF;}
+  .color9{ color: #C0C0C0;}

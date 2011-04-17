@@ -10,3 +10,8 @@ function check()
 	  return true;
   end
 }
+
+//Resize Image OnLoad, use jquery-resize plugin
+function ResizePhoto() {
+  $("#enjoy-photo").resize({ maxWidth: 800});
+}

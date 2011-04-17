@@ -1,5 +1,5 @@
  <a href ="/">
-	<%=image_tag @page.picture.shortcut_path || @page.picture.global_path, :width => @page.picture.width.to_s + 'px' %>
+	<%=image_tag @page.picture.shortcut_path || @page.picture.global_path, :title => @page.title, :border => 0, :id => 'enjoy-photo', :onload => "ResizePhoto()" %>
  </a>
 
 <div id="summary">
@@ -22,9 +22,8 @@
 </form>
 
 <div id="tag_list">
-<h3>View other people's description of this picture:</h3>
   <%@page.tag_list.each do |tag| -%>
-		<%=link_to tag, {:action => 'tag', :id => tag}, :class => 'css3' %>
+		<%=link_to tag, {:action => 'tag', :id => tag}, :class => "css2 color#{randi}" %>
   <%end -%>
 </div>
 
