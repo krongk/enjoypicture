@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-  # GET /pages
+  caches_page :index, :daily, :tag_cloud, :tag, :show
+
+	# GET /pages
   # GET /pages.xml
   def index
     #@pages = Page.all.paginate :page => params[:page]||1, :per_page => 6, :order => 'updated_at DESC'

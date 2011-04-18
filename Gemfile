@@ -14,6 +14,8 @@ gem 'pg', '0.9.0'
 gem 'acts-as-taggable-on'
 gem 'will_paginate'
 
+gem 'nokogiri'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

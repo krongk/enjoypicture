@@ -1,4 +1,18 @@
 Enjoypicture::Application.routes.draw do
+  get "admin/login"
+
+  get "admin/notes"
+
+  get "admin/index"
+
+  get "admin/flickr"
+
+  get "admin/beautifulphotonet"
+
+  get "admin/sphotography"
+
+  get "admin/picasaweb"
+
   resources :pictures
 
   resources :pages

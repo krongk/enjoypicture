@@ -45,7 +45,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: enjoypicture_production
+  database: enjoypicture_dev
   pool: 5
-  username: enjoypicture
-  password:
+  username: postgres
+  password: kenrome

@@ -1,3 +1,103 @@
+@charset "UTF-8";
+
+@media screen, projection
+{
+  .yform {
+    margin:0 auto;
+    padding:0px;
+  }
+
+  .yform label {
+    color:#666;
+  }
+
+  .yform input,
+  .yform textarea,
+  .yform select, 
+  .yform optgroup {
+    font-family:Arial, Helvetica, sans-serif; /* proportional fonts for all form elements */
+  }
+
+  .yform .type-text input,
+  .yform .type-text textarea,
+  .yform .type-select select {
+    border:1px solid #ddd;
+	padding:5px 1em;
+	color:#666;
+  }
+
+  /* :hover and :focus status on form fields | Effekt zur Hervorhebung von Formularfeldern bei :hover oder :focus */
+  .yform div.type-text input:focus,
+  .yform div select:focus,
+  .yform div textarea:focus,
+  .yform div.type-text input:hover,
+  .yform div select:hover,
+  .yform div textarea:hover,
+  .yform div.type-text input:active,
+  .yform div select:active,
+  .yform div textarea:active {
+    border:1px #a66 solid;
+    background:#fff;
+	padding:5px 1em;
+	color:#4D87C7;
+  }
+
+  /* Styling of custom styled buttons | Gestaltung von individuell gestalteten Buttons */
+  .yform .type-button input {
+    border-top:1px #ddd solid;
+    border-left:1px #ddd solid;
+    border-right:1px #444 solid;
+    border-bottom:1px #444 solid;
+    color:#666;
+    background:#454500 url(../images/button_gray.png) top left repeat-x;
+    padding:5px 1em;
+  }
+
+  .yform .type-button input[type=reset] { color:#300; background:#661717 url(../images/button_red.png) top left repeat-x; }
+  .yform .type-button input[type=submit] { color:#330; background:#5e5607 url(../images/button_yellow.png) top left repeat-x; }
+
+  /* optional button styling for IE6 using classes */
+  .yform .type-button input.reset { color:#300; background:#661717 url(../images/button_red.png) top left repeat-x; }
+  .yform .type-button input.submit { color:#330; background:#5e5607 url(../images/button_yellow.png) top left repeat-x; }
+
+  /* :hover and :focus status on buttons | Effekt zur Hervorhebung von Schaltern bei :hover oder :focus */
+  .yform div.type-button input:focus,
+  .yform div.type-button input:hover,
+  .yform div.type-button input:active {
+    border-top:1px #444 solid;
+    border-left:1px #444 solid;
+    border-right:1px #ddd solid;
+    border-bottom:1px #ddd solid;
+    color:#fff;
+    background:#555; 
+  }
+
+  .yform div.type-button input.reset:focus,
+  .yform div.type-button input.reset:hover,
+  .yform div.type-button input.reset:active {
+    background:#800; color:#fff;
+  }
+
+  .yform div.type-button input.submit:focus,
+  .yform div.type-button input.submit:hover,
+  .yform div.type-button input.submit:active {
+    background:#880; color:#fff;
+  }
+
+ /*------------------------------------------------------------------------------------------------------*/
+  /* Styling of error-messages | Fehlermeldungen */
+  .yform div.error {
+    border:1px #a00 dashed;
+    background:#faf4f4;
+    padding:0.5em;
+  }
+
+  .yform div.error label { color:#000; font-weight:bold; }
+  .yform div.error .message { color:#800; }
+
+ 
+}
+
 @charset "utf-8";
  /*------------------------------------------------------------------------------------------------------*/
   * { margin:0; padding:0; }
