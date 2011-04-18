@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  caches_page :index, :daily, :tag_cloud, :tag, :show
+  caches_page :tag_cloud, :tag, :show
 
 	# GET /pages
   # GET /pages.xml
