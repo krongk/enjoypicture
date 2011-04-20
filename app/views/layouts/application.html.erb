@@ -17,13 +17,15 @@
 </script>
 </head>
 <body>
+<% cache do  -%>
 <%=render :partial => 'layouts/header' %>
+<% end -%>
 
 <div id ="article" class="page_margins">
   <%= yield %>
 </div>
 
-<% cache do  %>
+<% cache do  -%>
 	<%=render :partial => 'layouts/footer' %>
 	<script type="text/javascript">
 
@@ -38,6 +40,6 @@
 		})();
 
 	</script>
-<% end %>
+<% end -%>
 </body>
 </html>

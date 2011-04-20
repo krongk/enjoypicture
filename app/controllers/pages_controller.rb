@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
-  caches_page :tag_cloud, :tag, :show
+  caches_page :tag_cloud, :tag
 
 	# GET /pages
   # GET /pages.xml
   def index
     #@pages = Page.all.paginate :page => params[:page]||1, :per_page => 6, :order => 'updated_at DESC'
-		@page = Page.order('random()').limit(3).first
+		@page = Page.order('random()').limit(1).first
 		
     respond_to do |format|
       format.html # index.html.erb
