@@ -38,7 +38,7 @@ test:
   adapter: postgresql
   encoding: unicode
   database: enjoypicture_test
-  pool: 5
+  pool: 1
   username: enjoypicture
   password:
 
@@ -46,6 +46,6 @@ production:
   adapter: postgresql
   encoding: unicode
   database: enjoypicture_dev
-  pool: 5
+  pool: 1
   username: postgres
   password: kenrome
