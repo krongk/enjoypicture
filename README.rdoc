@@ -34,4 +34,4 @@ See http://www.enjoypicture.net for fun.
 
  == To Do List
  * write backgroud job to fetch picture
- * page cache
+ * page cache -> not do 
