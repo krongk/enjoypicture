@@ -14,8 +14,8 @@ class PagesController < ApplicationController
   end
 
   def daily
-		@page = Page.order('random()').limit(3).first
-		
+		@page = FlickrDataExtractor.new.daily_fetch
+		@page ||= Page.order('random()').limit(3).first
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pages }
