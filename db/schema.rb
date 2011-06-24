@@ -10,13 +10,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110408144814) do
+ActiveRecord::Schema.define(:version => 20110620143157) do
+
+  create_table "contacts", :force => true do |t|
+    t.string   "typo",         :default => "wenba"
+    t.string   "name"
+    t.string   "gender"
+    t.date     "birth"
+    t.string   "wedding"
+    t.string   "address"
+    t.string   "email"
+    t.string   "qq"
+    t.string   "phone"
+    t.text     "content"
+    t.string   "is_processed", :default => "n"
+    t.string   "processed_by"
+    t.text     "note"
+    t.string   "is_visiable",  :default => "y"
+    t.string   "is_destroy",   :default => "n"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "seo_title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "is_exported", :limit => 1, :default => "n"
   end
 
   create_table "pictures", :force => true do |t|

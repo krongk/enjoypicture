@@ -12,7 +12,7 @@ gem 'rails', '3.0.3'
 
 gem 'pg', '0.9.0'
 gem 'acts-as-taggable-on'
-gem 'will_paginate'
+gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git'
 
 gem 'nokogiri'
 

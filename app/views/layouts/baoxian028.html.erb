@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Enjoypicture</title> 
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag 'forms', :cache => true %>
+</head>
+<body>
+<%= yield %>
+<%if session[:user] -%>
+  <div style="width:100%; background-color:#ffcc00; padding:10px;"><a href="/logout">退出</a></div>
+<%end -%>
+</body>
+</html>

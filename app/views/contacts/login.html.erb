@@ -1,0 +1,14 @@
+<div id="acontent" style=" background-color: #ffffff;"> 
+<form action="/login" method="get"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="KXNwPUdIgklzlCZpTNjQPVPvo/WRKyFJt0sEhbIJQ40=" /></div><p><label for="login">登录名 </label><br/> 
+<input id="name" name="name" type="text" /></p> 
+ 
+<p><label for="password">密码</label><br/> 
+<input id="pass" name="pass" type="password" /></p>  
+ 
+<p><input name="commit" type="submit" value="登录" /></p> 
+</form></div> 
+
+<%if flash[:notice] %>
+  <div style="color:red"><%=flash[:notice]%></div>
+<%end %>
+

@@ -15,3 +15,4 @@ function check()
 function ResizePhoto() {
   $("#enjoy-photo").resize({ maxWidth: 800});
 }
+

@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  typo: MyString
+  name: MyString
+  gender: MyString
+  birth: 2011-06-20
+  wedding: MyString
+  address: MyString
+  email: MyString
+  qq: MyString
+  phone: MyString
+  content: MyString
+  is_processed: MyString
+  processed_by: MyString
+  note: MyString
+  is_visiable: MyString
+  is_destroy: MyString
+
+two:
+  typo: MyString
+  name: MyString
+  gender: MyString
+  birth: 2011-06-20
+  wedding: MyString
+  address: MyString
+  email: MyString
+  qq: MyString
+  phone: MyString
+  content: MyString
+  is_processed: MyString
+  processed_by: MyString
+  note: MyString
+  is_visiable: MyString
+  is_destroy: MyString

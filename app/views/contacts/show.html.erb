@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Typo:</b>
+  <%= @contact.typo %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @contact.name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @contact.gender %>
+</p>
+
+<p>
+  <b>Birth:</b>
+  <%= @contact.birth %>
+</p>
+
+<p>
+  <b>Wedding:</b>
+  <%= @contact.wedding %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @contact.address %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <b>Qq:</b>
+  <%= @contact.qq %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @contact.phone %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @contact.content %>
+</p>
+
+<p>
+  <b>Is processed:</b>
+  <%= @contact.is_processed %>
+</p>
+
+<p>
+  <b>Processed by:</b>
+  <%= @contact.processed_by %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @contact.note %>
+</p>
+
+<p>
+  <b>Is visiable:</b>
+  <%= @contact.is_visiable %>
+</p>
+
+<p>
+  <b>Is destroy:</b>
+  <%= @contact.is_destroy %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>

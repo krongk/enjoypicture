@@ -1,0 +1,79 @@
+<%= form_for(@contact) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :typo, :value => params[:typo] || 'wenba' %>
+  </div>
+  <div class="field">
+    <%= f.label :name, '姓名' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender,'性别' %><br />
+    <%= f.radio_button :gender, '男', :checked => "checked"%>男
+		<%= f.radio_button :gender, '女'%>女
+  </div>
+  <div class="field">
+    <%= f.label :birth, '出生' %><br />
+    <%= f.date_select :birth, :start_year => 1940, :use_month_numbers  => true %>
+  </div>
+  <div class="field">
+    <%= f.label :wedding, '婚姻状况' %><br />
+		<%= f.radio_button :wedding, '已婚', :checked => "checked"%>已婚
+		<%= f.radio_button :wedding, '未婚'%>未婚
+  </div>
+  <div class="field">
+    <%= f.label :address, '家庭住址' %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :email, '电子邮件' %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :qq, 'QQ/MSN' %><br />
+    <%= f.text_field :qq %>
+  </div>
+  <div class="field">
+    <%= f.label :phone, '联系电话' %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="text">
+    <%= f.label :content, '咨询内容' %><br />
+    <%= f.text_area :content %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :processed_by %><br />
+    <%= f.hidden_field :processed_by, :value => session[:user] %>
+  </div>
+
+	<div class="field">
+    <%= f.label :is_processed, '是否处理' %><br />
+		<%= f.radio_button :is_processed, '是', :checked => "checked"%>是
+		<%= f.radio_button :is_processed, '否'%>否
+  </div>
+	 <div class="text">
+    <%= f.label :note, '处理备注' %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="field">
+    <%= f.label :is_destroy, '是否删除' %><br />
+    <%= f.radio_button :is_destroy, '是'%>是
+		<%= f.radio_button :is_destroy, '否', :checked => "checked"%>否
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 Enjoypicture::Application.routes.draw do
+  resources :contacts
+
   get "admin/login"
 
   get "admin/notes"
@@ -73,6 +75,10 @@ Enjoypicture::Application.routes.draw do
 	 match 'add_tag' => "pages#add_tag"
 	 match 'tag_cloud' => "pages#tag_cloud"
 	 match 'tag' => "pages#tag"
+
+	 #baoxian028
+	 match 'login' => "contacts#login"
+	 match 'logout' => "contacts#logout"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

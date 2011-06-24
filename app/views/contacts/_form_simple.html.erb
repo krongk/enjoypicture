@@ -1,0 +1,53 @@
+<script type="text/javascript"> 
+  function check_contact(){
+		var phone = document.getElementById("contact_phone");
+		var content = document.getElementById("contact_content");
+		var error = document.getElementById("contact_error");
+		if(phone.value == '' || content.value == '' || phone.value.length < 8){
+		  error.style.display = 'block';
+			return false;
+		}
+		return true;
+	}
+	
+	function clear_error()
+	{
+    var error = document.getElementById("contact_error");
+		error.style.display = 'none';
+	}
+	function clear_value()
+	{
+	  var content = document.getElementById("contact_content");
+		if(content.value== "请尽可能详细的描述您的问题:\n1. 个人情况描述\n2. 希望了解哪方面的保险\n3. 需要解决什么问题"){content.value =''}
+	}
+</script>
+<div style="margin-left: 40px; color:blue;">
+<%= form_for(@contact, :html =>{ :class => "yform", :onSubmit => "return check_contact();"}) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :typo, :value => params[:typo] || 'wenba' %>
+	<br/>
+  <div class="field">
+    <%= f.label :name, '姓名:' %> <%= f.text_field :name, :size => 18, :onFocus => 'javascript:clear_error();'%>
+    <%= f.label :phone, '联系电话：' %> <%= f.text_field :phone, :size => 20, :onFocus => 'javascript:clear_error();' %>
+  </div>
+	<br/>
+  <div class="text">
+    <%= f.label :content, '咨询内容' %><br />
+    <%= f.text_area :content, :cols=> 62, :rows => 8, :onFocus => 'javascript:clear_value();clear_error();', :value => "请尽可能详细的描述您的问题:\n1. 个人情况描述\n2. 希望了解哪方面的保险\n3. 需要解决什么问题"%>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交"%>
+  </div>
+	<label id="contact_error" style ="display:none; color:red;">电话和咨询内容不能为空， 或者电话号码输入有误！<br/>请填写真实手机号码，服务人员会在24小时之内联系您。</label>
+<% end %>
+</div>
