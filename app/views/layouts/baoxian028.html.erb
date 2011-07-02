@@ -2,14 +2,18 @@
 <html>
 <head>
   <meta charset=utf-8 />
-  <title>Enjoypicture</title> 
+  <title>contacts management of baoxian028</title> 
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'forms', :cache => true %>
 </head>
 <body>
 <%= yield %>
 <%if session[:user] -%>
-  <div style="width:100%; background-color:#ffcc00; padding:10px;"><a href="/logout">退出</a></div>
+  <div style="width:100%; background-color:#ffcc00; padding:10px;">
+		<%if ['admin','master'].include?(session[:user]) -%><a href="/clear_log">清空日志</a><%end -%>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/logout">退出后台</a>
+	</div>
 <%end -%>
 </body>
 </html>

@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_filter :login_require, :except => ['login','new']
+  before_filter :login_require, :except => ['login','new', 'create']
 	layout 'baoxian028'
 
 	def login_require
@@ -9,9 +9,11 @@ class ContactsController < ApplicationController
 	end
 
 	def login
-	  if ['admin','master','inruby'].include?(params[:name])
-			if ['kenrome','nasha'].include?(params[:pass])
+	  if ['admin','master','baoxian028', 'test'].include?(params[:name])
+			if ['kenrome','nasha','028baoxian', 'baoxian028.com'].include?(params[:pass])
 			  session[:user] = params[:name]
+				client_ip = request.remote_ip
+				ContactLog.create(:msg => "#{session[:user]} - #{client_ip = request.remote_ip} - #{Time.now.strftime('%Y-%m-%d %H:%M:%S')}")
 				redirect_to "/contacts"
 			else
 			  flash[:notice] = '密码错误'
@@ -28,7 +30,13 @@ class ContactsController < ApplicationController
 	# GET /contacts
   # GET /contacts.xml
   def index
-    @contacts = Contact.where(:is_destroy => 'n').order("created_at desc").paginate(:page => params[:page]||1, :per_page => 16)
+	  if ['admin', 'master'].include?(session[:user])
+			@contacts = Contact.order("created_at desc").paginate(:page => params[:page]||1, :per_page => 24)
+		else
+			@contacts = Contact.where(:is_visiable => 'y').order("created_at desc").paginate(:page => params[:page]||1, :per_page => 20)
+	  end
+    
+		@contact_logs = ContactLog.order("created_at desc").limit(20)
 	  #@posts = Post.paginate_by_board_id @board.id, :page => params[:page], :order => 'updated_at DESC'
 		#@topics = Topic.where(:catalog_id=>@catalog.id).order("updated_at desc").paginate(:page=>params[:page]||1,:per_page=>10) 
     respond_to do |format|
@@ -71,7 +79,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to(@contact, :notice => 'Contact was successfully created.') }
+        format.html { render :text => "谢谢您的留言，客服人员会在24小时之内尽快与您取得联系！<div>请点击右上角<img src='images/x.png' alt='close' />图标关闭窗口</div>" }
         format.xml  { render :xml => @contact, :status => :created, :location => @contact }
       else
         format.html { render :action => "new" }
@@ -87,7 +95,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.update_attributes(params[:contact])
-        format.html { redirect_to(@contact, :notice => 'Contact was successfully updated.') }
+        format.html { redirect_to(contacts_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -96,8 +104,7 @@ class ContactsController < ApplicationController
     end
   end
 
-  # DELETE /contacts/1
-  # DELETE /contacts/1.xml
+  # filter messages, only admin can see
   def destroy
     @contact = Contact.find(params[:id])
     #@contact.destroy
@@ -109,4 +116,12 @@ class ContactsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+	#clear ContactLog's after 20 records
+	def clear_log
+	  ContactLog.find_each do |log|
+		  log.destroy
+	  end
+		redirect_to(contacts_url)
+	end
 end

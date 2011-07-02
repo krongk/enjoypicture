@@ -78,7 +78,13 @@ Enjoypicture::Application.routes.draw do
 
 	 #baoxian028
 	 match 'login' => "contacts#login"
+	 match 'baoxian028' => "contacts#login"
+	 match 'admin' => "contacts#login"
+
 	 match 'logout' => "contacts#logout"
+	 match 'clear_log' => "contacts#clear_log"
+
+	 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

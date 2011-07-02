@@ -1,7 +1,11 @@
-<div id="acontent" style=" background-color: #ffffff;"> 
-<form action="/login" method="get"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="KXNwPUdIgklzlCZpTNjQPVPvo/WRKyFJt0sEhbIJQ40=" /></div><p><label for="login">登录名 </label><br/> 
+<div id="acontent" style=" background-color: #666; padding:12px;"> <h3>Contacts Management of Baoxian028</h3></div>
+<div id="acontent" style=" background-color: #ddd; padding:20px;"> 
+<form action="/login" method="get">
+<div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="KXNwPUdIgklzlCZpTNjQPVPvo/WRKyFJt0sEhbIJQ40=" /></div>
+
+<p><label for="login">登录名 </label><br/> 
 <input id="name" name="name" type="text" /></p> 
- 
+ <br/> 
 <p><label for="password">密码</label><br/> 
 <input id="pass" name="pass" type="password" /></p>  
  
@@ -9,6 +13,8 @@
 </form></div> 
 
 <%if flash[:notice] %>
-  <div style="color:red"><%=flash[:notice]%></div>
+  <div style="color:red; background-color: #ccc; padding: 20px;"><%=flash[:notice]%></div>
 <%end %>
+
+</div>
 

@@ -128,4 +128,10 @@
 	color:#4D87C7;
 	}
    .contact_error{ display: none;}
+ /*------------------------------------------------------------------------------------------------------*/
+.process_n_y{background:#eeffcc;} /*---not processed, visiable---*/
+.process_y_y{background:#fff;}    /*--- processed, visiable---*/
+.process_y_n{background:#ffccff;} /*---processed, not visiable---*/
+
+  /*-------y-----------------------------------------------------------------------------------------------*/
 }

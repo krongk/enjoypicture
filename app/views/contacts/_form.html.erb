@@ -11,9 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.hidden_field :typo, :value => params[:typo] || 'wenba' %>
-  </div>
+<table><tr><td valign='top'>
+	<h2>基本信息</h2>
   <div class="field">
     <%= f.label :name, '姓名' %><br />
     <%= f.text_field :name %>
@@ -32,7 +31,7 @@
 		<%= f.radio_button :wedding, '已婚', :checked => "checked"%>已婚
 		<%= f.radio_button :wedding, '未婚'%>未婚
   </div>
-  <div class="field">
+	<div class="field">
     <%= f.label :address, '家庭住址' %><br />
     <%= f.text_field :address %>
   </div>
@@ -44,6 +43,8 @@
     <%= f.label :qq, 'QQ/MSN' %><br />
     <%= f.text_field :qq %>
   </div>
+</td><td valign='top'>
+	<h2>联系方式</h2>
   <div class="field">
     <%= f.label :phone, '联系电话' %><br />
     <%= f.text_field :phone %>
@@ -52,28 +53,26 @@
     <%= f.label :content, '咨询内容' %><br />
     <%= f.text_area :content %>
   </div>
- 
-  <div class="field">
-    <%= f.label :processed_by %><br />
-    <%= f.hidden_field :processed_by, :value => session[:user] %>
-  </div>
-
-	<div class="field">
-    <%= f.label :is_processed, '是否处理' %><br />
-		<%= f.radio_button :is_processed, '是', :checked => "checked"%>是
-		<%= f.radio_button :is_processed, '否'%>否
-  </div>
+</td><td valign='top'>
+  <h2>处理备注</h2>
 	 <div class="text">
-    <%= f.label :note, '处理备注' %><br />
     <%= f.text_area :note %>
   </div>
-  <div class="field">
-    <%= f.label :is_destroy, '是否删除' %><br />
-    <%= f.radio_button :is_destroy, '是'%>是
-		<%= f.radio_button :is_destroy, '否', :checked => "checked"%>否
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
+<%if ['admin', 'master'].include?(session[:user]) %>
+    <div class="field">
+			<%= f.label :gender,'显示' %><br />
+			<%= f.radio_button :is_visiable, 'y', :checked => "checked"%>是
+			<%= f.radio_button :is_visiable, 'n'%>否
   </div>
+<%end%>
+
+
+	<%= f.hidden_field :processed_by, :value => session[:user] %>
+	<%= f.hidden_field :is_processed, :value => 'y' %><br/>
+  <div class="actions">
+    <%= f.submit  '提交' %> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '返回', contacts_path %>
+  </div>
+</td></tr></table>
+
 <% end %>

@@ -1,5 +1,4 @@
-<h1>Listing contacts</h1>
-
+<div id="acontent" style=" background-color: #666; padding:12px;"> <h3>Contacts Management of Baoxian028</h3></div>
 <table border = '0'>
   <tr>
     <th>编号</th>
@@ -11,12 +10,10 @@
     <th>处理备注</th>
     <th>处理人</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @contacts.each do |contact| %>
-  <tr>
+  <tr class = "process_<%=contact.is_processed%>_<%=contact.is_visiable%>">
     <td><%= contact.id %></td>
     <td><%= contact.name %></td>
     <td><%= contact.phone %></td>
@@ -25,11 +22,14 @@
 		<td><%= contact.is_processed %></td>
     <td><%= contact.note %></td>
     <td><%= contact.processed_by %></td>
-    <td><%= link_to '详细', contact %></td>
-    <td><%= link_to '修改', edit_contact_path(contact) %></td>
-    <td><%= link_to '删除', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to '处理', edit_contact_path(contact) %></td>
   </tr>
 <% end %>
 </table>
 
 <%= will_paginate %>
+
+
+<%@contact_logs.each do |log| %>
+  <p><%=log.msg %></p>
+<% end %>

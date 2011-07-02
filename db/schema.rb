@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110620143157) do
+ActiveRecord::Schema.define(:version => 20110702035152) do
+
+  create_table "contact_logs", :force => true do |t|
+    t.string   "msg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contacts", :force => true do |t|
     t.string   "typo",         :default => "wenba"
